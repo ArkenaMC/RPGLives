@@ -1,0 +1,9 @@
+name: RPGLives
+author: GloriousMeme
+version: 2.3.4
+description: "Gives multiple lives before dropping your items in specific worlds"
+main: net.minequests.gloriousmeme.rpglives.RPGLives
+softdepend: [PlaceholderAPI, Vault]
+commands:
+    lives:
+    rpglives:

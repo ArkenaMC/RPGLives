@@ -1,0 +1,92 @@
+# Author: GloriousMeme
+# Version 2.3.3
+# Side note: all <lives> in messages get replaced with the number of lives you have
+# Side note: all <maxlives> in messages get replaced with your max number of lives you can have
+
+# Default maximum amount of lives a player can have
+AmountOfLives: 3
+
+# Which worlds does the player not lose items from pvp deaths?
+SaveItemsOnPvPDeathWorlds:
+    - "world"
+
+# The amount of lives it takes on a death from pvp
+PvPDeathAmount: 1
+
+# The amount of lives it takes on anything besides a pvp death
+NormalDeathAmount: 1
+
+# If this is enabled you will have to give players the "LifePermission" or else they will not regen lives or get any
+UseLifePermission: false
+
+# If you enable this you will regen lives at the RegenTime set time otherwise you will not regen lives period
+LifeRegen: true
+
+# The time between regenerating lives (in minutes)
+RegenTime: 10
+
+# If you enable this it will delete your items if you die with 0 lives left instead of just dropping them
+DeleteItems: false
+
+# Whether or not the title message is enabled (the message above the hotbar)
+TitleEnabled: true
+
+# If this is enabled you will have to add each world you would like to use lives in below in the "Worlds" list
+UsePerWorld: false
+
+# The worlds that lives are active in
+Worlds:
+    - "world"
+
+# The worlds that you want to have unlimited lives in
+UnlimitedLivesWorlds:
+    - "Example"
+
+# If this is true it will execute the commands below when the player dies on his last life
+ExecuteCommandsOnFinalLife: false
+
+# Commands for console to execute on player death use <player> to get the player's name
+Commands:
+    - "give <player> dirt 1"
+
+# Life shop section
+
+# Is the shop enabled?
+ShopEnabled: true
+
+# What will the buy button be named?
+BuyItemName: "&aBuy 1 life"
+
+# What will the close button be named?
+CloseItemName: "&cClose shop"
+
+# What will the surrounding borders be named?
+BorderName: "&aClick the green glass to buy a life."
+
+# What is the price of a life?
+LifePrice: 1000.0
+
+# The permission they need to have lives if you enabled the UseLifePermission option
+LifePermission: "rpglives.lives.use"
+
+# What item the Life Item will be
+LifeItemType: "STONE"
+
+# The name for the life item
+LifeItemName: "&6Soul Shard"
+
+# The lore for the life item
+LifeItemLore:
+    - "Soul Shard"
+
+# The message that is sent to you when you run /lives
+LivesCommandMessage: "&6You currently have <lives>/<maxlives> lives."
+
+# The message that is sent to you in chat when you gain a life
+GainLifeMessage: "&aYou gained another life and now have <lives>/<maxlives> lives."
+
+# The message that is sent to you in chat when you lose a life
+LostLifeMessage: "&cYou lost a life and now have <lives>/<maxlives> lives left."
+
+# The message that gets sent when you dont have permission to do something
+NoPermsMessage: "&4You do not have permission to use this command."
