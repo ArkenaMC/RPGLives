@@ -1,4 +1,0 @@
-language: java
-script: mvn -s .settings.xml clean javadoc:jar source:jar package install deploy
-jdk:
-- oraclejdk8
