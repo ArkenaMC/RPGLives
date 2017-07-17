@@ -23,6 +23,7 @@ public class LivesCommand extends AbstractCommand {
             } else {
                 player.sendMessage(Utils.replaceColors(RPGLives.get().getConfig().getString("LivesCommandMessage").replaceAll("<lives>",
                         String.valueOf(Utils.getLives(player))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player)))));
+                return;
             }
             player.sendMessage(Utils.replaceColors(RPGLives.get().getConfig().getString("LivesCommandMessage").replaceAll("<lives>",
                     String.valueOf(Utils.getLives(player))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player)))));

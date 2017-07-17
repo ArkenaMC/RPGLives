@@ -64,8 +64,8 @@ public class RPGLives extends JavaPlugin {
         saveDefaultConfig();
         registerEvents();
         AbstractCommand.registerCommands(this);
-        createFiles();
         getCommand("rpglives").setTabCompleter(new TabCompletionHandler());
+        createFiles();
 
         if (setupActionbar())
             getLogger().info("Actionbar setup was successful!");
@@ -183,6 +183,8 @@ public class RPGLives extends JavaPlugin {
             actionbar = new Actionbar_1_10();
         else if (version.contains("v1_11_R1"))
             actionbar = new Actionbar_1_11();
+        else if (version.contains("v1_12_R1"))
+            actionbar = new Actionbar_1_12();
 
         return actionbar != null;
     }
