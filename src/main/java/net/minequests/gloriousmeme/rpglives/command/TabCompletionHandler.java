@@ -15,8 +15,8 @@ public class TabCompletionHandler implements TabCompleter {
 
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] strings) {
-        if (command.getName().equalsIgnoreCase("rpglives")) {
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        if (command.getName().equalsIgnoreCase("rpglives") && !(args.length > 1)) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
 
