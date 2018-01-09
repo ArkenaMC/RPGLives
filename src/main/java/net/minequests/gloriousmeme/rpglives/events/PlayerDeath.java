@@ -106,9 +106,11 @@ public class PlayerDeath implements Listener {
                     return;
                 int x = Utils.getLives(player) - RPGLives.get().getConfig().getInt("PvPDeathAmount");
                 Utils.setLives(player, x);
-                if (RPGLives.get().getConfig().getBoolean("TitleEnabled"))
-                    RPGLives.get().actionbar.sendActionbar(player, "&cYou lost a life and now have " + Utils.getLives(player) + "/" + Utils.getMaxLives(player) + " lives left.");
-
+                if (RPGLives.get().getConfig().getBoolean("TitleEnabled")) {
+                    RPGLives.get().actionbar.sendActionbar(player, Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
+                            String.valueOf(Utils.getLives(player)))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player))));
+                    return;
+                }
                 player.sendMessage(Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
                         String.valueOf(Utils.getLives(player)))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player))));
             } else {
@@ -120,7 +122,8 @@ public class PlayerDeath implements Listener {
                 Utils.clearArmor(player);
                 event.getDrops().clear();
                 if (RPGLives.get().getConfig().getBoolean("TitleEnabled")) {
-                    RPGLives.get().actionbar.sendActionbar(player, "&cYou lost a life and now have " + Utils.getLives(player) + "/" + Utils.getMaxLives(player) + " lives left.");
+                    RPGLives.get().actionbar.sendActionbar(player, Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
+                            String.valueOf(Utils.getLives(player)))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player))));
                     return;
                 }
                 player.sendMessage(Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
@@ -135,7 +138,8 @@ public class PlayerDeath implements Listener {
             Utils.clearArmor(player);
             event.getDrops().clear();
             if (RPGLives.get().getConfig().getBoolean("TitleEnabled")) {
-                RPGLives.get().actionbar.sendActionbar(player, "&cYou lost a life and now have " + Utils.getLives(player) + "/" + Utils.getMaxLives(player) + " lives left.");
+                RPGLives.get().actionbar.sendActionbar(player, Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
+                        String.valueOf(Utils.getLives(player)))).replaceAll("<maxlives>", String.valueOf(Utils.getMaxLives(player))));
                 return;
             }
             player.sendMessage(Utils.replaceColors(RPGLives.get().getConfig().getString("LostLifeMessage").replaceAll("<lives>",
