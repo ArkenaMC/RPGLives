@@ -23,8 +23,9 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>adam</id>
+            <name>adams mirror of shit repos. aka MVdW the worst plugin author of all time</name>
+            <url>https://mvn.server.adamxp12.com/fuckmvdw/</url>
         </repository>
     </repositories>
 
@@ -37,10 +38,15 @@
         </dependency>
 
         <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.0.6</version>
-            <scope>provided</scope>
+            <groupId>be.maximvdw</groupId>
+            <artifactId>MVdWPlaceholderAPI</artifactId>
+            <version>1.0.2-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>*</artifactId>
+                    <groupId>*</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

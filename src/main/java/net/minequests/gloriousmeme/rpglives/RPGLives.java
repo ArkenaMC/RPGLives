@@ -175,10 +175,9 @@ public class RPGLives extends JavaPlugin {
 
         getLogger().info("Your server is running version " + version);
 
-       if (version.contains("v1_13_R2"))
-            actionbar = new Actionbar_1_13_1();
+       actionbar = new ActionbarTitle();
 
-        return actionbar != null;
+        return true;
     }
 
     public GUIUtils getGuiUtils() {
