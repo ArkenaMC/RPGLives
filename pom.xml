@@ -15,10 +15,6 @@
 
     <repositories>
         <repository>
-            <id>placeholderapi</id>
-            <url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-        </repository>
-        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -26,6 +22,10 @@
             <id>adam</id>
             <name>adams mirror of shit repos. aka MVdW the worst plugin author of all time</name>
             <url>https://mvn.server.adamxp12.com/fuckmvdw/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
