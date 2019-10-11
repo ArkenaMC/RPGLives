@@ -35,7 +35,7 @@ public class LifeItemInteract implements Listener {
                 i++;
                 hand.setAmount(amount - 1);
                 if (RPGLives.get().getVersion().contains("1_8")) {
-                    player.getInventory().setItemInHand(hand);
+                    player.getInventory().setItemInMainHand(hand);
                 }
                 else if (RPGLives.get().getVersion().contains("1_9") || RPGLives.get().getVersion().contains("1_10") || RPGLives.get().getVersion().contains("1_11")
                         || RPGLives.get().getVersion().contains("1_12")) {
@@ -47,7 +47,7 @@ public class LifeItemInteract implements Listener {
                 int i = Utils.getLives(player);
                 i++;
                 if (RPGLives.get().getVersion().contains("1_8")) {
-                    player.getInventory().setItemInHand(new ItemStack(Material.AIR));
+                    player.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
                 }
                 else if (RPGLives.get().getVersion().contains("1_9") || RPGLives.get().getVersion().contains("1_10") || RPGLives.get().getVersion().contains("1_11")
                         || RPGLives.get().getVersion().contains("1_12")) {

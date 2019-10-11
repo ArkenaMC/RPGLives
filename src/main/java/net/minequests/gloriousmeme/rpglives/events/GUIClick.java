@@ -17,13 +17,12 @@ public class GUIClick implements Listener {
     @EventHandler
     public void onInvClick(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
-        Inventory inventory = event.getClickedInventory();
         int clickedSlot = event.getSlot();
 
         if (event.getCurrentItem() == null)
             return;
 
-        if (inventory.getName().contains("Life")) {
+        if (event.getView().getTitle().contains("Life")) {
             if (clickedSlot == 11) {
                 if (Utils.getLives(player) >= Utils.getMaxLives(player)) {
                     player.sendMessage(Utils.replaceColors("&4You already have your maximum amount of lives."));
