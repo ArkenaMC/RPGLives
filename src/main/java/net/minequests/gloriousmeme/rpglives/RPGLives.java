@@ -5,7 +5,6 @@ import net.minequests.gloriousmeme.rpglives.command.AbstractCommand;
 import net.minequests.gloriousmeme.rpglives.command.TabCompletionHandler;
 import net.minequests.gloriousmeme.rpglives.events.*;
 import net.minequests.gloriousmeme.rpglives.utils.GUIUtils;
-import net.minequests.gloriousmeme.rpglives.utils.PlaceHolderAPIHook;
 import net.minequests.gloriousmeme.rpglives.utils.Utils;
 import net.minequests.gloriousmeme.rpglives.utils.versions.*;
 import org.bukkit.Bukkit;
@@ -13,6 +12,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,6 +34,7 @@ public class RPGLives extends JavaPlugin {
      */
 
     private static RPGLives plugin;
+    public static Plugin plugin2;
     private static RPGLivesAPI rpgLivesAPI;
 
     private static Economy economy = null;
@@ -52,6 +53,7 @@ public class RPGLives extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        plugin2 = this;
         rpgLivesAPI = new RPGLivesAPI();
         guiUtils = new GUIUtils();
 
@@ -72,12 +74,12 @@ public class RPGLives extends JavaPlugin {
         else
             getLogger().severe("Failed to setup Actionbar please use a compatible server version or disable TitleEnabled in the config!");
 
-
-        if (Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
-            new PlaceHolderAPIHook(this).hook();
-            getLogger().info("Hooked into PlaceholderAPI.");
+        if(Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
+            placeholder.registerPlaceholder();
+            getLogger().info("Hooked into  MVdWPlaceholderAPI");
         } else
-            getLogger().info("Could not find PlaceholderAPI continuing without it.");
+            getLogger().info("Unable to hook into  MVdWPlaceholderAPI. Is it installed?");
+
     }
 
     @Override
@@ -173,8 +175,10 @@ public class RPGLives extends JavaPlugin {
 
         getLogger().info("Your server is running version " + version);
 
-        actionbar = new ActionbarTitle();
-        return true;
+       if (version.contains("v1_13_R2"))
+            actionbar = new Actionbar_1_13_1();
+
+        return actionbar != null;
     }
 
     public GUIUtils getGuiUtils() {
